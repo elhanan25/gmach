@@ -6,7 +6,6 @@ const auth = require("../middleware/auth");
 const bcrypt = require("bcrypt");
 
 router.get("/me", auth, async (req, res) => {
-  console.log(req.user);
   const user = await User.findById(req.user._id);
   res.send(user);
 });
