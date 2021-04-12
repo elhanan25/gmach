@@ -18,7 +18,6 @@ import Please from "./component/pleaseform";
 import Status from "./component/status";
 import Editplease from "./component/updateplease";
 import Mystatus from "./component/mystatus";
-import Adminsignin from "./component/adminsignin";
 
 class App extends Component {
   state = { user: "" };
@@ -27,14 +26,7 @@ class App extends Component {
     const data = await userService.getCurrentUser();
     console.log(data);
     this.setState({ user: data });
-    // this.checkAdmin();
   }
-  // checkAdmin = async () => {
-  //   const user = await userService.getUserInfo();
-  //   if (user.isAdmin) {
-  //     this.setState({ user });
-  //   }
-  // };
 
   render() {
     const { user } = this.state;
@@ -51,7 +43,6 @@ class App extends Component {
             <Route path="/logout" component={Logout} />
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />
-            <Route path="/adminsignin" component={Adminsignin} />
             <Route path="/about" component={About} />
             <Route path="/list" component={List} />
             <Route path="/please" component={Please} />

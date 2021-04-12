@@ -17,9 +17,8 @@ class Signin extends Form {
   };
 
   doSubmit = async () => {
-    
     const { email, password } = this.state.data;
-      try {
+    try {
       await userService.login(email, password);
       window.location = "/";
     } catch (ex) {
@@ -33,26 +32,23 @@ class Signin extends Form {
     if (userService.getCurrentUser()) return <Redirect to="/" />;
 
     return (
-      // <div className="container">
       <>
         <PageHeader titleText="כניסת משתמש רשום" />
-        
-          <div className="container text-right" style={{ display: "grid", direction:"rtl" }}>
-            
-            <h4>נא כתוב פרטיך כדי שתוכל לבקש הלוואה</h4>
-            
-        {/* <div className="d-flex" style={{ display: "flex", alignItems:"right" }}> */}
-          {/* <div className="col-lg-6"> */}
+
+        <div
+          className="container text-right"
+          style={{ display: "grid", direction: "rtl" }}
+        >
+          <h4>נא כתוב פרטיך כדי שתוכל לבקש הלוואה</h4>
+
           <div className="col-lg-6 mt-4">
-           <form onSubmit={this.handleSubmit} autoComplete="off" method="POST">
+            <form onSubmit={this.handleSubmit} autoComplete="off" method="POST">
               {this.renderInput("email", "אימייל", "email")}
               {this.renderInput("password", "סיסמה", "password")}
               {this.renderButton("Signin")}
             </form>
-            </div>
           </div>
-        {/* </div> */}
-      
+        </div>
       </>
     );
   }

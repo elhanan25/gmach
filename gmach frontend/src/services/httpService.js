@@ -5,8 +5,6 @@ axios.defaults.headers.common["x-auth-token"] = localStorage.getItem("token");
 
 axios.interceptors.response.use(null, (err) => {
   if (err.response && err.response.status !== 200) {
-    console.log(err.response.data);
-
     if (err.response.data.data && err.response.data.data.message) {
       toast.error(err.response.data.data.message);
     }

@@ -34,17 +34,6 @@ class Please extends Form {
   };
 
   render() {
-    if (!userService.getCurrentUser())
-      return (
-        <>
-          <h1>you must be have account for please money</h1>
-          <NavLink className="btn btn-primary" to="/signin">
-            cancel{" "}
-          </NavLink>
-          ;
-        </>
-      );
-
     return (
       <>
         <div className="container text-right" style={{ direction: "rtl" }}>

@@ -64,11 +64,7 @@ class Navbar extends Component {
                       כניסת משתמש רשום
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-item nav-link" to="/adminsignin">
-                      כניסת מנהל
-                    </NavLink>
-                  </li>
+                  <li className="nav-item"></li>
                   <li className="nav-item">
                     <NavLink className="nav-link nav-item" to="/signup">
                       רישום לאתר
